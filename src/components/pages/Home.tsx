@@ -51,7 +51,7 @@ const Home: React.FC<HomeProps> = ({ productsInCart, removeFromCart }) => {
         ))}
       </div>
       {/* Компонент корзины с передачей выбранных продуктов */}
-      <Basket selectedProducts={selectedProducts} removeFromCart={removeFromCart} />
+      {/* <Basket selectedProducts={selectedProducts} removeFromCart={removeFromCart} /> */}
     </div>
   );
 };

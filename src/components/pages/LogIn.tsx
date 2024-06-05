@@ -13,10 +13,7 @@ function LogIn() {
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setErrors([]);
-
-    //  логика валидации и отправки данных может быть добавлена здесь
-
-    //  валидации: проверяем, что все поля заполнены
+    
     if (
       !emailRef.current?.value ||
       !passwordRef.current?.value

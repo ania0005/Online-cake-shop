@@ -2,6 +2,7 @@ import React from "react";
 import NavItem from "./NavItem";
 import { navItemsR } from "../../utils/constants";
 import { navItemsL } from "../../utils/constants";
+import "../../index.css";
 
 interface NavProps {
   onPageChange: (newPage: string) => void;// Определение интерфейса для пропсов компонента Navigation
