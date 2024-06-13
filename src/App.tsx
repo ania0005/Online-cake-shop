@@ -1,13 +1,14 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import Header from './components/header/Header';
-import Main from './components/main/Main';
-import Footer from './components/Footer';
-import { navItemsL, navItemsR } from './utils/constants';
 import { HashRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { navItemsL, navItemsR } from './utils/constants';
+import Header from './components/header/Header/Header';
+import Main from './components/main/Main';
+import Footer from './components/footer/Footer';
 
 function App() {
   const [page, setPage] = useState<string>(navItemsL[0].item || navItemsR[0].item);
+  
   const handlePageChange = (newPage: string) => {
     setPage(newPage);
   };
@@ -33,4 +34,5 @@ function App() {
 }
 
 export default App;
+
 

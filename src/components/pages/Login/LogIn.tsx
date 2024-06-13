@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Button, Container, FormControl, FormGroup, FormHelperText, Input, InputLabel, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
+import styles from './LogIn.module.css'; // Импорт стилей
 
 function LogIn() {
   const emailRef = useRef<HTMLInputElement>();
@@ -16,7 +17,8 @@ function LogIn() {
     
     if (
       !emailRef.current?.value ||
-      !passwordRef.current?.value
+      !passwordRef.current?.value ||
+      (showSignUp && !passwordConfirmationRef.current?.value)
     ) {
       setErrors(["Please fill out all fields"]);
       return;
@@ -32,74 +34,67 @@ function LogIn() {
   }
 
   return (
-    <Container maxWidth="sm" sx={{ border: "1px solid #ccc", borderRadius: "5px", padding: "20px", backgroundColor: "#f5f5f5" }}>
-      <Typography variant="h4" gutterBottom>
+    <Container className={styles.container}>
+      <Typography variant="h4" gutterBottom className={styles.header}>
         {showSignUp ? "Sign Up" : "Log In"}
       </Typography>
+      {errors.length > 0 && (
+        <div className={styles.error_message}>
+          {errors.map((error, index) => (
+            <p key={index}>{error}</p>
+          ))}
+        </div>
+      )}
       {showSignUp ? (
         <form onSubmit={handleSubmit}>
-          {errors.length > 0 && (
-            <div>
-              {errors.map((error, index) => (
-                <p key={index}>{error}</p>
-              ))}
-            </div>
-          )}
-          <FormGroup>
+          <FormGroup className={styles.form_group}>
             <FormControl fullWidth>
-              <InputLabel required htmlFor="email">
+              <InputLabel required htmlFor="email" className={styles.inputLabel}>
                 Email Address
               </InputLabel>
               <Input id="email" type="email" inputRef={emailRef} />
-              <FormHelperText>We'll never share your email.</FormHelperText>
+              <FormHelperText className={styles.helperText}>We'll never share your email.</FormHelperText>
             </FormControl>
           </FormGroup>
-          <FormGroup>
+          <FormGroup className={styles.form_group}>
             <FormControl fullWidth>
-              <InputLabel required htmlFor="password">
+              <InputLabel required htmlFor="password" className={styles.inputLabel}>
                 Password
               </InputLabel>
               <Input id="password" type="password" inputRef={passwordRef} />
-              <FormHelperText>We'll never share your password.</FormHelperText>
+              <FormHelperText className={styles.helperText}>We'll never share your password.</FormHelperText>
             </FormControl>
           </FormGroup>
-          <FormGroup>
-          <FormControl fullWidth>
-            <InputLabel required htmlFor="password-confirmation">
-              Password Confirmation
-            </InputLabel>
-            <Input id="password-confirmation" type="password" inputRef={passwordConfirmationRef} />
-          </FormControl>
-        </FormGroup>
+          <FormGroup className={styles.form_group}>
+            <FormControl fullWidth>
+              <InputLabel required htmlFor="password-confirmation" className={styles.inputLabel}>
+                Password Confirmation
+              </InputLabel>
+              <Input id="password-confirmation" type="password" inputRef={passwordConfirmationRef} />
+            </FormControl>
+          </FormGroup>
           <Button variant="contained" color="primary" type="submit">
             Sign Up
           </Button>
         </form>
       ) : (
         <form onSubmit={handleSubmit}>
-          {errors.length > 0 && (
-            <div>
-              {errors.map((error, index) => (
-                <p key={index}>{error}</p>
-              ))}
-            </div>
-          )}
-          <FormGroup>
+          <FormGroup className={styles.form_group}>
             <FormControl fullWidth>
-              <InputLabel required htmlFor="email">
+              <InputLabel required htmlFor="email" className={styles.inputLabel}>
                 Email Address
               </InputLabel>
               <Input id="email" type="email" inputRef={emailRef} />
-              <FormHelperText>We'll never share your email.</FormHelperText>
+              <FormHelperText className={styles.helperText}>We'll never share your email.</FormHelperText>
             </FormControl>
           </FormGroup>
-          <FormGroup>
+          <FormGroup className={styles.form_group}>
             <FormControl fullWidth>
-              <InputLabel required htmlFor="password">
+              <InputLabel required htmlFor="password" className={styles.inputLabel}>
                 Password
               </InputLabel>
               <Input id="password" type="password" inputRef={passwordRef} />
-              <FormHelperText>We'll never share your password.</FormHelperText>
+              <FormHelperText className={styles.helperText}>We'll never share your password.</FormHelperText>
             </FormControl>
           </FormGroup>
           <Button variant="contained" color="primary" type="submit">
@@ -107,8 +102,11 @@ function LogIn() {
           </Button>
         </form>
       )}
-      <Typography variant="body1" sx={{ marginTop: "1em" }}>
-        {showSignUp ? "Already have an account?" : "Don't have an account?"} <Link to="#" onClick={showSignUp ? () => setShowSignUp(false) : handleSignUp}>{showSignUp ? "Log In" : "Sign Up"}</Link>
+      <Typography variant="body1" className={styles.toggleLink}>
+        {showSignUp ? "Already have an account?" : "Don't have an account?"}{" "}
+        <Link to="#" onClick={showSignUp ? () => setShowSignUp(false) : handleSignUp}>
+          {showSignUp ? "Log In" : "Sign Up"}
+        </Link>
       </Typography>
     </Container>
   );

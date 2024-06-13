@@ -1,0 +1,22 @@
+/* Reviews.module.css */
+.container {
+    width: 65%;
+    margin: 0 auto;
+  }
+  
+  .header {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .reviewTitle {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+  }
+  
+  .reviewText {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+  }
+  

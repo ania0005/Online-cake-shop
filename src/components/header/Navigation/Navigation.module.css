@@ -1,0 +1,69 @@
+/* Navigation.module.css */
+
+/* Общие стили для навигации */
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  
+  /* Стили для левой группы кнопок (navItemsL) */
+  .navItemsLeft {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+   
+  }
+  
+  .navItemsLeft .nav_item {
+    font-size: 18px;
+  }
+  
+  /* Стили для правой группы кнопок (navItemsR) */
+  .navItemsRight {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style-type: none;
+  }
+  
+  .navItemsRight .nav_item {
+    font-size: 16px;
+  }
+  
+  @media (max-width: 768px) {
+    /* При уменьшении экрана до 768px */
+  
+    .navigation {
+      flex-direction: column; /* Располагаем элементы в столбец */
+      align-items: center; /* Выравниваем по центру экрана */
+    }
+  
+    .navItemsLeft,
+    .navItemsRight {
+      width: 100%; /* Занимают всю ширину столбца */
+      margin-top: 10px; /* Добавляем отступ между группами */
+    }
+  
+    .navItemsLeft .nav_item,
+    .navItemsRight .nav_item {
+      font-size: 14px; /* Уменьшаем размер текста на мобильных устройствах */
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

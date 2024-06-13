@@ -44,13 +44,13 @@ export const navItemsL: {item: string, path: string}[] = [
     { item: "Fillings", path: "/fillings" },
     { item: "Delivery", path: "/delivery" },
     { item: "Reviews", path: "/reviews" },
-    { item: "About us", path: "/about" },  
+    { item: "About", path: "/about" },  
   ]; 
 
   export const navItemsR: {item: string, path: string}[] = [      
     { item: "Basket", path: "/basket" }, 
     { item: "Contacts", path: "/contacts" },
-    { item: "Log in", path: "/logIn" }, 
+    { item: "LogIn", path: "/login" }, 
   ]; 
 
 export const tortes = [ 

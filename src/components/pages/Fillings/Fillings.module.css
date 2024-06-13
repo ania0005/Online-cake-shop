@@ -1,0 +1,34 @@
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .header {
+    font-family: "Bonheur Royale", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 70px;
+    margin-top: 35px;
+    color: hsl(276, 83%, 42%);
+  }
+  
+  .card {
+    margin-bottom: 20px;
+  }
+  
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
