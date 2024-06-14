@@ -14,7 +14,7 @@ function App() {
   };
 
   return (
-    <div className='container-fluid'>
+    <div className='container1'>
       <Router>
         <Header onPageChange={handlePageChange} />
         <Routes>

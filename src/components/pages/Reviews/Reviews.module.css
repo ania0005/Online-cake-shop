@@ -5,9 +5,12 @@
   }
   
   .header {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+    margin-top: 35px;
+    color: hsl(276, 83%, 42%);
   }
   
   .reviewTitle {

@@ -1,46 +1,28 @@
 import React from "react";
 import { tortes, titles, descriptions, productsPrice } from "../../../utils/constants";
-import Basket from "../Basket/Basket";
 import ProductCard from "../../main/ProductCard/ProductCard";
 import styles from "./Home.module.css";
 
-interface HomeProps {
-  productsInCart: { title: string; quantity: number }[];
-  removeFromCart: (index: number) => void;
-}
-
-const Home: React.FC<HomeProps> = ({ productsInCart, removeFromCart }) => {
-  const addToCart = (title: string, quantity: number) => {
-    const existingProduct = productsInCart.find((product) => product.title === title);
-
-    if (existingProduct) {
-      const updatedProducts = productsInCart.map((product) =>
-        product.title === title ? { ...product, quantity: product.quantity + quantity } : product
-      );
-      setSelectedProducts(updatedProducts);
-    } else {
-      setSelectedProducts([...productsInCart, { title, quantity }]);
-    }
-  };
-
-  const [selectedProducts, setSelectedProducts] = React.useState(productsInCart);
-
+const Home: React.FC = () => {
   return (
     <div className={styles.container}>
       <div>
         <h1 className={`display-5 text-center ${styles.header1}`}>
-          Our Products: Decorate your holiday with sweet happiness!
+          <p className={`${styles.header2}`}>Torte bestellen und geliefert bekommen</p>
+          <p>Unsere Stärke sind Premium Torten mit kreativer Deko – in reiner Handarbeit.
+            Wir versenden deine Torte taggenau innerhalb Deutschlands.
+            Natürlich kannst Du die Torte auch selbst in unserem Tortenladen abholen.
+            Wir freuen uns auf deinen Besuch!</p>
         </h1>
       </div>
       <div className={`${styles.row} row-cols-1 row-cols-md-4 g-3`}>
         {tortes.map((torte, index) => (
           <div className={styles.col} key={index}>
             <ProductCard
-              torte={tortes[index]}
+              torte={torte}
               title={titles[index]}
               description={descriptions[index]}
               productPrice={productsPrice.get(titles[index]) || 0}
-              addToCart={addToCart}
             />
           </div>
         ))}
@@ -50,3 +32,5 @@ const Home: React.FC<HomeProps> = ({ productsInCart, removeFromCart }) => {
 };
 
 export default Home;
+
+

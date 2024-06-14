@@ -8,13 +8,12 @@ import Fillings from '../pages/Fillings/Fillings';
 import Reviews from '../pages/Reviews/Reviews';
 import LogIn from '../pages/Login/LogIn';
 
-// Определение пропсов для компонента Main
 interface MyProps {
-  page: string;  // Строка, представляющая текущую страницу
+  page: string;
 }
 
 const Main: React.FC<MyProps> = ({ page }) => {
-  const initialSelectedProducts = [{ title: "Dummy Product", quantity: 1 }]; 
+  const initialSelectedProducts = [{ title: "Dummy Product", quantity: 1 }];
 
   const removeFromCart = (index: number) => {
     console.log("Remove from cart", index);
@@ -22,7 +21,7 @@ const Main: React.FC<MyProps> = ({ page }) => {
 
   switch (page) {
     case 'Home':
-      return <Home productsInCart={initialSelectedProducts} removeFromCart={removeFromCart} />;
+      return <Home />;
     case 'About':
       return <About />;
     case 'Delivery':
@@ -38,7 +37,7 @@ const Main: React.FC<MyProps> = ({ page }) => {
     case 'Reviews':
       return <Reviews />;
     default:
-      return <Home productsInCart={initialSelectedProducts} removeFromCart={removeFromCart} />;
+      return <Home />;
   }
 };
 

@@ -1,13 +1,39 @@
-
 .footer {
-    background-color: #f8f9fa; 
-    padding: 20px; 
-    text-align: center;
-    border-top: 1px solid #e7e7e7;
-  }
-  
-  .footer span {
-    font-weight: bold;
-    color: #071d5f;
-  }
-  
+  background-color: #f8f9fa;
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #e7e7e7;
+  height: 200px; /* Фиксированная высота футера */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Центрируем содержимое по вертикали */
+  width: 100%; /* Занимаем всю доступную ширину экрана */
+  margin-top: auto; /* Прижимаем футер к низу */ /* Занимаем всю доступную ширину экрана */
+}
+
+.cardsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Расстояние между изображениями */
+  margin-bottom: 20px; /* Отступ снизу */
+}
+
+.cardImage {
+  height: 50px; /* Задаем высоту изображения */
+  object-fit: contain; /* Изображение сохраняет пропорции */
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer span {
+  font-weight: bold;
+  color: #071d5f;
+}
+
+
+
+
+
