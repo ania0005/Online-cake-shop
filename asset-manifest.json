@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Online-cake-shop/static/css/main.5be7289e.css",
-    "main.js": "/Online-cake-shop/static/js/main.7b27b836.js",
+    "main.css": "/Online-cake-shop/static/css/main.542e8fcf.css",
+    "main.js": "/Online-cake-shop/static/js/main.5254a559.js",
     "static/js/453.ae351f79.chunk.js": "/Online-cake-shop/static/js/453.ae351f79.chunk.js",
     "static/media/tort13.jpg": "/Online-cake-shop/static/media/tort13.2992204abbc006e1862e.jpg",
     "static/media/tort31.jpg": "/Online-cake-shop/static/media/tort31.3c0ce560368141ee646b.jpg",
@@ -39,16 +39,19 @@
     "static/media/topping2.jpg": "/Online-cake-shop/static/media/topping2.de1e533ab2f0f4f5d6d4.jpg",
     "static/media/topping4.jpg": "/Online-cake-shop/static/media/topping4.446a55c7c51a3f5a424f.jpg",
     "static/media/topping1.jpg": "/Online-cake-shop/static/media/topping1.2ee19a0a7723a677b924.jpg",
+    "static/media/maestro_card.png": "/Online-cake-shop/static/media/maestro_card.0adfe8009494e96cec19.png",
     "static/media/topping3.jpg": "/Online-cake-shop/static/media/topping3.e4672d5cfacccd2b89dd.jpg",
     "static/media/topping5.jpg": "/Online-cake-shop/static/media/topping5.c0fd420211d769678163.jpg",
+    "static/media/visa.png": "/Online-cake-shop/static/media/visa.ab789914c32294396eb1.png",
+    "static/media/pay_pal_card.png": "/Online-cake-shop/static/media/pay_pal_card.f9e2e4ad9817b661f2af.png",
     "static/media/topping0.jpg": "/Online-cake-shop/static/media/topping0.73edcc78c87cd5c6ea13.jpg",
     "index.html": "/Online-cake-shop/index.html",
-    "main.5be7289e.css.map": "/Online-cake-shop/static/css/main.5be7289e.css.map",
-    "main.7b27b836.js.map": "/Online-cake-shop/static/js/main.7b27b836.js.map",
+    "main.542e8fcf.css.map": "/Online-cake-shop/static/css/main.542e8fcf.css.map",
+    "main.5254a559.js.map": "/Online-cake-shop/static/js/main.5254a559.js.map",
     "453.ae351f79.chunk.js.map": "/Online-cake-shop/static/js/453.ae351f79.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5be7289e.css",
-    "static/js/main.7b27b836.js"
+    "static/css/main.542e8fcf.css",
+    "static/js/main.5254a559.js"
   ]
 }
