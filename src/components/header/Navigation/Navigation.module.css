@@ -1,60 +1,91 @@
-/* Navigation.module.css */
-
-/* Общие стили для навигации */
 .navigation {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+/* Styles for left group of buttons (navItemsL) */
+.navItemsLeft {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.navItemsLeft .nav_item {
+  font-size: 18px;
+}
+
+/* Styles for right group of buttons (navItemsR) */
+.navItemsRight {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+
+.navItemsRight .nav_item {
+  font-size: 16px;
+}
+
+.navItem {
+  font-size: 16px;
+}
+
+.activeLink {
+  position: relative;
+  text-decoration: none;
+  color: #db1717;
+}
+
+.activeLink::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 100%;
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: #5c62ec;
+}
+
+.normalLink {
+  text-decoration: none;
+  color: #fff;
+  transition: opacity 0.2s ease-in;
+  line-height: 24px;
+  font-size: 21px;
+}
+
+.normalLink:hover {
+  opacity: 0.8;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .navigation {
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
-    margin-left: 10%;
-    margin-right: 10%;
   }
-  
-  /* Стили для левой группы кнопок (navItemsL) */
-  .navItemsLeft {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    flex-wrap: wrap;
-   
-  }
-  
-  .navItemsLeft .nav_item {
-    font-size: 18px;
-  }
-  
-  /* Стили для правой группы кнопок (navItemsR) */
+
+  .navItemsLeft,
   .navItemsRight {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    flex-wrap: wrap;
-    list-style-type: none;
+    width: 100%;
+    margin-top: 10px;
   }
-  
+
+  .navItemsLeft .nav_item,
   .navItemsRight .nav_item {
-    font-size: 16px;
+    font-size: 14px;
   }
-  
-  @media (max-width: 768px) {
-    /* При уменьшении экрана до 768px */
-  
-    .navigation {
-      flex-direction: column; /* Располагаем элементы в столбец */
-      align-items: center; /* Выравниваем по центру экрана */
-    }
-  
-    .navItemsLeft,
-    .navItemsRight {
-      width: 100%; /* Занимают всю ширину столбца */
-      margin-top: 10px; /* Добавляем отступ между группами */
-    }
-  
-    .navItemsLeft .nav_item,
-    .navItemsRight .nav_item {
-      font-size: 14px; /* Уменьшаем размер текста на мобильных устройствах */
-    }
-  }
+}
+
+
+
   
   
   

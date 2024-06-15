@@ -7,6 +7,7 @@ import Basket from '../pages/Basket/Basket';
 import Fillings from '../pages/Fillings/Fillings';
 import Reviews from '../pages/Reviews/Reviews';
 import LogIn from '../pages/Login/LogIn';
+import SignUp from '../pages/SignUp/SignUp';
 
 interface MyProps {
   page: string;
@@ -32,6 +33,8 @@ const Main: React.FC<MyProps> = ({ page }) => {
       return <Basket selectedProducts={initialSelectedProducts} removeFromCart={removeFromCart} />;
     case 'LogIn':
       return <LogIn />;
+      case 'SignUp':
+      return <SignUp />;
     case 'Fillings':
       return <Fillings />;
     case 'Reviews':

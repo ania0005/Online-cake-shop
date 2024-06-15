@@ -1,115 +1,135 @@
-import React, { useRef, useState } from "react";
-import { Button, Container, FormControl, FormGroup, FormHelperText, Input, InputLabel, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
-import styles from './LogIn.module.css'; // Импорт стилей
+import React, { useContext, useState } from "react";
+import styles from "./LogIn.module.css";
+import { useNavigate } from "react-router-dom";
+import AuthContext from "../../../contexts/LoginContext";
+import { Eye, EyeOff } from "react-feather";
 
-function LogIn() {
-  const emailRef = useRef<HTMLInputElement>();
-  const passwordRef = useRef<HTMLInputElement>();
-  const passwordConfirmationRef = useRef<HTMLInputElement>();
+const Login: React.FC = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
-  const [errors, setErrors] = useState<string[]>([]);
-  const [showSignUp, setShowSignUp] = useState<boolean>(false);
+  const navigate = useNavigate();
+  const { setUser } = useContext(AuthContext);
 
-  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setErrors([]);
-    
-    if (
-      !emailRef.current?.value ||
-      !passwordRef.current?.value ||
-      (showSignUp && !passwordConfirmationRef.current?.value)
-    ) {
-      setErrors(["Please fill out all fields"]);
-      return;
+  const handleKeyDown = (
+    event: React.KeyboardEvent<HTMLInputElement>,
+    field: string
+  ) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      if (field === "email") {
+        const passwordInput = document.getElementById(
+          "password"
+        ) as HTMLInputElement;
+        passwordInput && passwordInput.focus();
+      } else if (field === "password") {
+        const loginButton = document.querySelector(
+          ".save-button"
+        ) as HTMLButtonElement;
+        loginButton && loginButton.click();
+      }
     }
+  };
 
-    // Если все в порядке, можно отправить данные на сервер или выполнить другие действия
-    // dispatch(loginUser({ email: emailRef.current.value, password: passwordRef.current.value }));
-  }
-
-  async function handleSignUp(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setShowSignUp(true);
-  }
+
+    try {
+      const response = await fetch("/api/users/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log("Successful authorization:", data);
+
+      const { user } = data;
+      if (setUser) {
+        setUser(user);
+      }
+      navigate("/dashboard");
+    } catch (error) {
+      setError(
+        "Error during authorization. Please check the entered data."
+      );
+      console.error("Error sending data:", error);
+    }
+  };
+
+  const handleEyeClick = (
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    event.preventDefault();
+    setShowPassword(!showPassword);
+  };
 
   return (
-    <Container className={styles.container}>
-      <Typography variant="h4" gutterBottom className={styles.header}>
-        {showSignUp ? "Sign Up" : "Log In"}
-      </Typography>
-      {errors.length > 0 && (
-        <div className={styles.error_message}>
-          {errors.map((error, index) => (
-            <p key={index}>{error}</p>
-          ))}
+    <div className={styles["auth-container"]}>
+      <h2>Log In</h2>
+      {error && <p className={styles["error-message"]}>{error}</p>}
+      <form onSubmit={handleSubmit}>
+        <div className={styles["input-group"]}>
+          <label htmlFor="email">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="john@example.com"
+            required
+            onKeyDown={(e) => handleKeyDown(e, "email")}
+          />
         </div>
-      )}
-      {showSignUp ? (
-        <form onSubmit={handleSubmit}>
-          <FormGroup className={styles.form_group}>
-            <FormControl fullWidth>
-              <InputLabel required htmlFor="email" className={styles.inputLabel}>
-                Email Address
-              </InputLabel>
-              <Input id="email" type="email" inputRef={emailRef} />
-              <FormHelperText className={styles.helperText}>We'll never share your email.</FormHelperText>
-            </FormControl>
-          </FormGroup>
-          <FormGroup className={styles.form_group}>
-            <FormControl fullWidth>
-              <InputLabel required htmlFor="password" className={styles.inputLabel}>
-                Password
-              </InputLabel>
-              <Input id="password" type="password" inputRef={passwordRef} />
-              <FormHelperText className={styles.helperText}>We'll never share your password.</FormHelperText>
-            </FormControl>
-          </FormGroup>
-          <FormGroup className={styles.form_group}>
-            <FormControl fullWidth>
-              <InputLabel required htmlFor="password-confirmation" className={styles.inputLabel}>
-                Password Confirmation
-              </InputLabel>
-              <Input id="password-confirmation" type="password" inputRef={passwordConfirmationRef} />
-            </FormControl>
-          </FormGroup>
-          <Button variant="contained" color="primary" type="submit">
-            Sign Up
-          </Button>
-        </form>
-      ) : (
-        <form onSubmit={handleSubmit}>
-          <FormGroup className={styles.form_group}>
-            <FormControl fullWidth>
-              <InputLabel required htmlFor="email" className={styles.inputLabel}>
-                Email Address
-              </InputLabel>
-              <Input id="email" type="email" inputRef={emailRef} />
-              <FormHelperText className={styles.helperText}>We'll never share your email.</FormHelperText>
-            </FormControl>
-          </FormGroup>
-          <FormGroup className={styles.form_group}>
-            <FormControl fullWidth>
-              <InputLabel required htmlFor="password" className={styles.inputLabel}>
-                Password
-              </InputLabel>
-              <Input id="password" type="password" inputRef={passwordRef} />
-              <FormHelperText className={styles.helperText}>We'll never share your password.</FormHelperText>
-            </FormControl>
-          </FormGroup>
-          <Button variant="contained" color="primary" type="submit">
-            Log In
-          </Button>
-        </form>
-      )}
-      <Typography variant="body1" className={styles.toggleLink}>
-        {showSignUp ? "Already have an account?" : "Don't have an account?"}{" "}
-        <Link to="#" onClick={showSignUp ? () => setShowSignUp(false) : handleSignUp}>
-          {showSignUp ? "Log In" : "Sign Up"}
-        </Link>
-      </Typography>
-    </Container>
-  );
-}
+        <div className={styles["input-group"]}>
+          <label htmlFor="password">Password</label>
+          <div style={{ position: "relative" }}>
+            <input
+              type={showPassword ? "text" : "password"}
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Qwerty123!"
+              required
+              className={styles["password-input"]}
+              onKeyDown={(e) => handleKeyDown(e, "password")}
+            />
+            <button
+              className={styles["eye-icon"]}
+              onClick={handleEyeClick}
+            >
+              {showPassword ? (
+                <Eye style={{ color: "black" }} />
+              ) : (
+                <EyeOff style={{ color: "black" }} />
+              )}
+            </button>
+          </div>
+        </div>
 
-export default LogIn;
+        <p className={styles["consent-text"]}>
+          By entering the resource, you automatically consent to the processing
+          of personal data. <a href="/#/privacy-policy">Personal Policy</a>
+        </p>
+        <div className={styles["center"]}>
+          <button className="save-button" type="submit">
+            Log In
+          </button>
+        </div>
+      </form>
+      <p>
+        Don't have an account? <a href="/#/signup">Sign Up</a>
+      </p>
+    </div>
+  );
+};
+
+export default Login;

@@ -56,6 +56,7 @@ export const navItemsR: { item: string; path: string }[] = [
   { item: "Basket", path: "/basket" },
   { item: "Contacts", path: "/contacts" },
   { item: "LogIn", path: "/login" },
+  { item: "SignUp", path: "/signup" },
 ];
 
 export const cards = [ 

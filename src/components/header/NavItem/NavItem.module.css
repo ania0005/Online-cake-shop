@@ -2,40 +2,49 @@
 
 .button {
   margin: 5px;
-  background-color: #fa71ba;
-  color: #071d5f;
+ background-color: #35eaf7;
+  color: #050505; /* Белый цвет текста */
+  font-size: 18px; /* Немного уменьшили размер шрифта */
+  font-family: 'Playball', cursive;
+  font-weight: 500;
   text-decoration: none;
-  padding: 10px 15px;
+  padding: 10px 20px;
   border: none;
   cursor: pointer;
-  border-radius: 10%; /* Закругленные углы */
-  transition: font-size 0.3s, padding 0.3s; /* Плавные переходы размера текста и отступов */
+  border-radius: 5px; /* Меньше радиус закругления */
+  transition: background-color 0.3s, transform 0.3s; /* Плавные переходы цвета фона и трансформации */
 }
 
 .button:hover {
-  background-color: #dd5c9a;
+  background-color: #ed9af8; /* Более тёмный зелёный цвет при наведении */
+  transform: scale(1.05); /* Легкое увеличение при наведении */
+}
+
+.selected {
+  border-bottom: 3px solid #ed9af8; /* Подчёркивание выбранного элемента */
 }
 
 /* Медиа-запросы для адаптации размера кнопок */
 @media (max-width: 1200px) {
   .button {
-    font-size: 14px; /* Уменьшаем размер текста для экранов до 1200px */
-    padding: 8px 12px; /* Уменьшаем отступы */
+    font-size: 16px;
+    padding: 8px 16px;
   }
 }
 
 @media (max-width: 992px) {
   .button {
-    font-size: 12px; /* Уменьшаем размер текста для экранов до 992px */
-    padding: 6px 10px; /* Уменьшаем отступы */
+    font-size: 14px;
+    padding: 6px 12px;
   }
 }
 
 @media (max-width: 768px) {
   .button {
-    font-size: 10px; /* Уменьшаем размер текста для мобильных устройств */
-    padding: 4px 8px; /* Уменьшаем отступы */
+    font-size: 12px;
+    padding: 4px 10px;
   }
 }
+
 
   

@@ -1,12 +1,15 @@
+/* Header.module.css */
+
 .header {
-    font-family: "Bonheur Royale", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 110px;
-    margin-top: 35px;
-    color: hsl(276, 83%, 42%);
-    text-align: center; 
-  }
+  font-family: 'Playball', cursive;
+  font-weight: 500; /* Более жирный текст */
+  font-style: normal;
+  font-size: 60px; /* Уменьшенный размер текста */
+  margin-top: 20px;
+  color: hsl(276, 83%, 42%); /* Более нейтральный и современный цвет */
+  text-align: center;
+}
+
 
 
   

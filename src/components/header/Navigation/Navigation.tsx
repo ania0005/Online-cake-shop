@@ -1,6 +1,6 @@
 // Navigation.tsx
 
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Navigation.module.css';
 import NavItem from '../NavItem/NavItem';
 import { navItemsL, navItemsR } from '../../../utils/constants';
@@ -10,6 +10,13 @@ interface NavProps {
 }
 
 const Navigation: React.FC<NavProps> = ({ onPageChange }) => {
+  const [selectedItem, setSelectedItem] = useState<string>('');
+
+  const handlePageChange = (newPage: string) => {
+    setSelectedItem(newPage);
+    onPageChange(newPage);
+  };
+
   return (
     <nav className={styles.navigation}>
       <ul className={styles.navItemsLeft}>
@@ -18,20 +25,19 @@ const Navigation: React.FC<NavProps> = ({ onPageChange }) => {
             key={index}
             item={e.item}
             path={e.path}
-            onClick={() => onPageChange(e.path)}
+            onClick={() => handlePageChange(e.path)}
+            isSelected={selectedItem === e.path}
           />
         ))}
       </ul>
       <ul className={styles.navItemsRight}>
-        <li className={styles.nav_item}>
-          <div className={styles.phone_wrapper}>4915111019999</div>
-        </li>
         {navItemsR.map((e, index) => (
           <NavItem
             key={index}
             item={e.item}
             path={e.path}
-            onClick={() => onPageChange(e.path)}
+            onClick={() => handlePageChange(e.path)}
+            isSelected={selectedItem === e.path}
           />
         ))}
       </ul>
@@ -40,6 +46,7 @@ const Navigation: React.FC<NavProps> = ({ onPageChange }) => {
 };
 
 export default Navigation;
+
 
 
 

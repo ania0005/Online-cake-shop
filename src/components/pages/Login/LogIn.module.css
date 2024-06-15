@@ -1,39 +1,119 @@
-/* LogIn.module.css */
-.container {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 20px;
-    background-color: #f5f5f5;
-    max-width: 400px;
-    margin: 0 auto;
+.auth-container {
+  width: 50%;
+  max-width: 400px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: auto; /* Центрируем контейнер по горизонтали */
+  padding: 20px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Выравниваем элементы по центру */
+}
+
+.auth-container h2 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 20px;
+  font-family:none;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #f7efef;
+  border-radius: 4px;
+  font-size: 16px; /* Установим размер шрифта для полей ввода */
+}
+
+.consent-text {
+  font-size: 0.8em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #2891e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px; /* Установим размер шрифта для кнопки */
+}
+
+button:hover {
+  background-color: #3788da;
+}
+
+.auth-container p {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px; /* Установим размер шрифта для абзацев */
+}
+
+.auth-container a {
+  color:   #039759;
+  text-decoration: none;
+}
+
+.auth-container a:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  color: #d9534f;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.input-group input::placeholder {
+  color: #c2bfbf;
+}
+.eye-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 0; /* Удалим отступы */
+  margin: 0; /* Удалим внешние отступы */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12px; /* Установим ширину иконки */
+  height: 12px; /* Установим высоту иконки */
+}
+
+
+@media (max-width: 425px) {
+  .auth-container {
+    width: 70%;
   }
-  
-  .header {
-    text-align: center;
-    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .auth-container {
+    width: 80%;
   }
-  
-  .form_group {
-    margin-bottom: 15px;
+}
+
+@media (max-width: 1024px) {
+  .auth-container {
+    width: 80%;
   }
-  
-  .input_label {
-    font-weight: bold;
-  }
-  
-  .helper_text {
-    font-size: 0.875em;
-    color: #666;
-  }
-  
-  .error_message {
-    color: red;
-    margin-bottom: 15px;
-  }
-  
-  .toggle_link {
-    display: block;
-    margin-top: 20px;
-    text-align: center;
-  }
-  
+}

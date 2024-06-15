@@ -4,15 +4,20 @@
     margin: 0 auto;
   }
   
-  .header {
-    font-family: "DM Serif Display", serif;
+  .header,
+  .header1 {
+    font-family: 'Playball', cursive;
     font-weight: 400;
     font-style: normal;
     font-size: 50px;
     margin-top: 35px;
     color: hsl(276, 83%, 42%);
+  } 
+  .header1 {
+    font-size: 30px;
+    font-family: none;
+    font-weight: 550;
   }
-  
   .section {
     margin-top: 20px;
   }
@@ -21,11 +26,15 @@
     font-size: 24px;
     font-weight: bold;
     margin-top: 20px;
+    text-align: center;
+    color: hsl(276, 83%, 42%);
   }
   
   .sectionContent {
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: 600;
     line-height: 1.6;
     margin-top: 10px;
   }
+ 
   
