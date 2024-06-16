@@ -21,10 +21,12 @@
   
   .col {
     flex: 1;
+    font-size: 20px;
   }
   
   .button {
     margin: 5px;
+    width: 245px;
   }
   
   .totalPrice {

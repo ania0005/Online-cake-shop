@@ -1,44 +1,45 @@
 
 .cardContainer {
-    margin-bottom: 20px; /* Отступ между карточками */
-  }
-  
-  .cardImage {
-    height: 400px; /* Высота изображения */
-    object-fit: cover; /* Режим заполнения изображения */
-    padding: 15px; /* Отступ внутри карточки */
-  }
-  
-  .cardTitle {
-    font-size: 1.5rem; /* Размер шрифта заголовка */
-    font-weight: bold; /* Жирный шрифт для заголовка */
-  }
-  
-  .cardText {
-    font-size: 1rem; /* Размер шрифта для текста */
-    margin: 5px 0; /* Отступы для текста */
-  }
-  
-  .quantityControls {
-    display: flex; /* Flexbox для выравнивания элементов */
-    align-items: center; /* Вертикальное выравнивание по центру */
-  }
-  
-  .quantityButton {
-    background-color: #f8f9fa; /* Цвет кнопки */
-    border: 1px solid #ccc; /* Граница кнопки */
-    margin: 0 5px; /* Отступы между кнопками */
-  }
-  
-  .addToBasketButton {
-    background-color: #17a2b8; /* Цвет кнопки "Add to Basket" */
-    color: white; /* Цвет текста кнопки */
-    border: none; /* Без границы */
-    margin-left: 10px; /* Отступ слева */
-  }
-  
-  .addToBasketButton:hover {
-    background-color: #138496; /* Цвет кнопки при наведении */
-  }
+  margin-bottom: 20px; /* Отступ между карточками */
+}
+
+.cardImage {
+  height: 400px; /* Высота изображения */
+  object-fit:cover; /* Режим заполнения изображения */
+  padding: 35px;
+  padding-top: 15px;
+}
+
+.cardTitle {
+  font-size: 1.5rem; /* Размер шрифта заголовка */
+  font-weight: bold; /* Жирный шрифт для заголовка */
+}
+
+.cardText {
+  font-size: 1rem; /* Размер шрифта для текста */
+  margin: 5px 0; /* Отступы для текста */
+}
+
+.quantityControls {
+  display: flex; /* Flexbox для выравнивания элементов */
+  align-items: center; /* Вертикальное выравнивание по центру */
+}
+
+.quantityButton {
+  background-color: #f8f9fa; /* Цвет кнопки */
+  border: 1px solid #ccc; /* Граница кнопки */
+  margin: 0 5px; /* Отступы между кнопками */
+}
+
+.addToBasketButton {
+  background-color: #17a2b8; /* Цвет кнопки "Add to Basket" */
+  color: white; /* Цвет текста кнопки */
+  border: none; /* Без границы */
+  margin-left: 10px; /* Отступ слева */
+}
+
+.addToBasketButton:hover {
+  background-color: #138496; /* Цвет кнопки при наведении */
+}
 
   
