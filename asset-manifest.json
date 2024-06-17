@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Online-cake-shop/static/css/main.2324c1c9.css",
-    "main.js": "/Online-cake-shop/static/js/main.e74d7455.js",
+    "main.css": "/Online-cake-shop/static/css/main.52914e74.css",
+    "main.js": "/Online-cake-shop/static/js/main.316fc476.js",
     "static/js/453.ae351f79.chunk.js": "/Online-cake-shop/static/js/453.ae351f79.chunk.js",
     "static/media/tort13.jpg": "/Online-cake-shop/static/media/tort13.2992204abbc006e1862e.jpg",
     "static/media/tort31.jpg": "/Online-cake-shop/static/media/tort31.3c0ce560368141ee646b.jpg",
@@ -47,12 +47,12 @@
     "static/media/pay_pal_card.png": "/Online-cake-shop/static/media/pay_pal_card.f9e2e4ad9817b661f2af.png",
     "static/media/topping0.jpg": "/Online-cake-shop/static/media/topping0.73edcc78c87cd5c6ea13.jpg",
     "index.html": "/Online-cake-shop/index.html",
-    "main.2324c1c9.css.map": "/Online-cake-shop/static/css/main.2324c1c9.css.map",
-    "main.e74d7455.js.map": "/Online-cake-shop/static/js/main.e74d7455.js.map",
+    "main.52914e74.css.map": "/Online-cake-shop/static/css/main.52914e74.css.map",
+    "main.316fc476.js.map": "/Online-cake-shop/static/js/main.316fc476.js.map",
     "453.ae351f79.chunk.js.map": "/Online-cake-shop/static/js/453.ae351f79.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2324c1c9.css",
-    "static/js/main.e74d7455.js"
+    "static/css/main.52914e74.css",
+    "static/js/main.316fc476.js"
   ]
 }
