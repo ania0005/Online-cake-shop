@@ -5,8 +5,6 @@ const About: React.FC = () => {
   return (
     <div className={styles.container}>
       <h2 className={styles.header}>About Us:</h2>
-     
-      
       <p className={styles.paragraph}>
         Wir sind die führende Online-Einkaufsseite für Backwaren in Europa,
         insbesondere in Deutschland, bieten wir eine Auswahl von über 4000

@@ -77,7 +77,7 @@ const SignUp: React.FC = () => {
       alert("Confirm your email in your inbox");
 
       localStorage.setItem("username", data.username);
-      navigate("/login");
+      navigate("/Login");
     } catch (error) {
       setError("Error during registration. Please check the entered data.");
       console.error("Error sending data:", error);
@@ -197,7 +197,7 @@ const SignUp: React.FC = () => {
       </form>
 
       <p>
-        Already have an account? <a href="/#/login">Log In</a>
+        Already have an account? <a href="/#/Login">Log In</a>
       </p>
     </div>
   );

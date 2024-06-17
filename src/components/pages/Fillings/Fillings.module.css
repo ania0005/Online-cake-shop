@@ -18,8 +18,10 @@
   }
   
   .card-img-top {
-    height: 200px;
+    height: 300px;
     object-fit: cover;
+    padding: 45px;
+    padding-top: 5px;
   }
   
   .card-title {

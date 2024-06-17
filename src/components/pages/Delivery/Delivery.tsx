@@ -10,21 +10,21 @@ const Delivery: React.FC = () => {
       </h3>
       <div className={styles.section}>
         <p className={styles.sectionContent}>
-        DHL Paket__________________________5,90 €__________2 Werktage (+/- 1 Werktag)
+          DHL Paket__________________________5,90 €__________2 Werktage (+/- 1 Werktag)
         </p>
         <p className={styles.sectionContent}>
-        DHL Express________________________9,90 €__________1 Werktage
+          DHL Express________________________9,90 €__________1 Werktag
         </p>
         <p className={styles.sectionContent}>
-        DHL Express, vor 12 Uhr__________12,90 €__________1 Werktage
+          DHL Express, vor 12 Uhr__________12,90 €__________1 Werktag
         </p>
         <p className={styles.sectionContent}>
-        DHL Samstagsexpress____________14,90 €__________1 Werktage
+          DHL Samstagsexpress____________14,90 €__________1 Werktag
         </p>
-
       </div>
     </div>
   );
 };
 
 export default Delivery;
+

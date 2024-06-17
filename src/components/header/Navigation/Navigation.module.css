@@ -15,10 +15,6 @@
   flex-wrap: wrap;
 }
 
-.navItemsLeft .nav_item {
-  font-size: 18px;
-}
-
 /* Styles for right group of buttons (navItemsR) */
 .navItemsRight {
   display: flex;
@@ -26,10 +22,6 @@
   align-items: center;
   flex-wrap: wrap;
   list-style-type: none;
-}
-
-.navItemsRight .nav_item {
-  font-size: 16px;
 }
 
 .navItem {
@@ -76,13 +68,26 @@
   .navItemsRight {
     width: 100%;
     margin-top: 10px;
+    justify-content: center; /* Center align the items */
   }
 
   .navItemsLeft .nav_item,
   .navItemsRight .nav_item {
     font-size: 14px;
   }
+
+  /* Merge left and right items into a single row */
+  .navItemsLeft,
+  .navItemsRight {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style-type: none;
+    justify-content: center; /* Center align the items */
+  }
 }
+
 
 
 

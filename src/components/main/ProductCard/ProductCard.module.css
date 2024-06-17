@@ -1,11 +1,10 @@
-
 .cardContainer {
   margin-bottom: 20px; /* Отступ между карточками */
 }
 
 .cardImage {
   height: 400px; /* Высота изображения */
-  object-fit:cover; /* Режим заполнения изображения */
+  object-fit: cover; /* Режим заполнения изображения */
   padding: 35px;
   padding-top: 15px;
 }
@@ -41,5 +40,97 @@
 .addToBasketButton:hover {
   background-color: #138496; /* Цвет кнопки при наведении */
 }
+
+/* Mobile adaptation */
+@media (max-width: 1024px) {
+  .cardContainer {
+    flex: 1 0 100%; /* Ensure one column per row on small screens */
+  }
+
+  .cardImage {
+    height: 400px; /* Adjust image height for smaller screens */
+    padding: 33px;
+    padding-top: 14px;
+  }
+
+  .cardTitle {
+    font-size: 1.25rem; /* Adjust font size for smaller screens */
+  }
+
+  .cardText {
+    font-size: 0.875rem; /* Adjust font size for smaller screens */
+  }
+}
+@media (max-width: 820px) {
+  .cardContainer {
+    flex: auto; /* Ensure one column per row on small screens */
+  }
+
+  .cardImage {
+    height: 400px; /* Adjust image height for smaller screens */
+    padding: 30px;
+    padding-top: 14px;
+  }
+
+  .cardTitle {
+    font-size: 1.25rem; /* Adjust font size for smaller screens */
+  }
+
+  .cardText {
+    font-size: 0.875rem; /* Adjust font size for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .cardContainer {
+    flex: auto; /* Ensure one column per row on small screens */
+  }
+
+  .cardImage {
+    height: 400px; /* Adjust image height for smaller screens */
+    padding: 65px;
+    padding-top: 14px;
+  }
+
+  .cardTitle {
+    font-size: 1.25rem; /* Adjust font size for smaller screens */
+  }
+
+  .cardText {
+    font-size: 0.875rem; /* Adjust font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .cardImage {
+    height: 250px; /* Further adjust image height for very small screens */
+    padding: 40px;
+    padding-top: 3px;
+  }
+
+  .cardTitle {
+    font-size: 1rem; /* Further adjust font size for very small screens */
+  }
+
+  .cardText {
+    font-size: 0.75rem; /* Further adjust font size for very small screens */
+  }
+}
+@media (max-width: 380px) {
+  .cardImage {
+    height: 250px; /* Further adjust image height for very small screens */
+    padding: 38px;
+    padding-top: 3px;
+  }
+
+  .cardTitle {
+    font-size: 1rem; /* Further adjust font size for very small screens */
+  }
+
+  .cardText {
+    font-size: 0.75rem; /* Further adjust font size for very small screens */
+  }
+}
+
 
   

@@ -126,7 +126,7 @@ const Login: React.FC = () => {
         </div>
       </form>
       <p>
-        Don't have an account? <a href="/#/signup">Sign Up</a>
+        Don't have an account? <a href="/#/SignUp">Sign Up</a>
       </p>
     </div>
   );

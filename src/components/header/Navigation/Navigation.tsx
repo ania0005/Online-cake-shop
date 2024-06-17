@@ -1,5 +1,3 @@
-// Navigation.tsx
-
 import React, { useState } from 'react';
 import styles from './Navigation.module.css';
 import NavItem from '../NavItem/NavItem';
@@ -46,6 +44,7 @@ const Navigation: React.FC<NavProps> = ({ onPageChange }) => {
 };
 
 export default Navigation;
+
 
 
 
