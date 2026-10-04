@@ -7,7 +7,6 @@
   margin-right: 10%;
 }
 
-/* Styles for left group of buttons (navItemsL) */
 .navItemsLeft {
   display: flex;
   gap: 10px;
@@ -15,7 +14,6 @@
   flex-wrap: wrap;
 }
 
-/* Styles for right group of buttons (navItemsR) */
 .navItemsRight {
   display: flex;
   gap: 10px;
@@ -57,7 +55,6 @@
   opacity: 0.8;
 }
 
-/* Media queries for responsive design */
 @media (max-width: 768px) {
   .navigation {
     flex-direction: column;
@@ -76,7 +73,6 @@
     font-size: 14px;
   }
 
-  /* Merge left and right items into a single row */
   .navItemsLeft,
   .navItemsRight {
     display: flex;

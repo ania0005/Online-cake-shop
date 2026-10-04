@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
         ))}
       </div>
       <p>
-        © Copyright 2024 InterNestor GmbH. Alle Rechte vorbehalten.
+        © Copyright 2024 InterNester GmbH. Alle Rechte vorbehalten.
         <span> email</span>
       </p>
     </footer>
